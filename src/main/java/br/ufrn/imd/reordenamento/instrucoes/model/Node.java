@@ -50,6 +50,9 @@ public class Node {
 		this.lastOperationRecorder = lastOperationRecorder;
 	}
 
+	public boolean isDependent(Node node) {
+		return false;
+	}
 	
 	@Override
 	public String toString() {
