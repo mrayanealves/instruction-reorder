@@ -16,7 +16,7 @@ public class Queue {
 	 */
 	public void enqueue(Graph graph) {
 		Integer inQueue = graphs.indexOf(graph);
-		if (inQueue > 0){
+		if (inQueue != -1){
 			return;
 		}
 		this.graphs.add(graph);
