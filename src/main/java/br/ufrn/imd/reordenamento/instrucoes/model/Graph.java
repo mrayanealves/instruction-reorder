@@ -56,6 +56,30 @@ public class Graph {
 	}
 
 	/**
+	 * Retorna o grafo e suas dependências
+	 * @return Lista com a instrução e suas dependências
+	 */
+	public List<String> returnGraphDependences(){
+		List<String> orderedInstructions = new ArrayList<String>();
+		List<Graph> graphLevelOrdered = levelOrder();
+
+		String compactString = "";
+
+		for (int i = 0; i < graphLevelOrdered.size(); i++){
+			compactString.concat((i+1) + " " + graphLevelOrdered.get(i).getRoot().toString() + " | ");
+			if (!graphLevelOrdered.get(i).getResponsables().isEmpty()){
+				for (Graph graph : graphLevelOrdered.get(i).getResponsables()){
+					compactString.concat((orderedInstructions.indexOf(graph)+1) + " ");
+				}
+			}
+			orderedInstructions.add(compactString);
+			compactString = "";
+		}
+
+		return orderedInstructions;
+	}
+
+	/**
 	 * Insere um novo nó no grafo
 	 * @param newNode Node a ser inserido
 	 */
@@ -105,30 +129,6 @@ public class Graph {
 		}
 
 		return higherLevel;
-	}
-
-	/**
-	 * Retorna o grafo e suas dependências
-	 * @return Lista com a instrução e suas dependências
-	 */
-	private List<String> returnGraphDependences(){
-		List<String> orderedInstructions = new ArrayList<String>();
-		List<Graph> graphLevelOrdered = levelOrder();
-
-		String compactString = "";
-
-		for (int i = 0; i < graphLevelOrdered.size(); i++){
-			compactString.concat((i+1) + " " + graphLevelOrdered.get(i).getRoot().toString() + " | ");
-			if (!graphLevelOrdered.get(i).getResponsables().isEmpty()){
-				for (Graph graph : graphLevelOrdered.get(i).getResponsables()){
-					compactString.concat((orderedInstructions.indexOf(graph)+1) + " ");
-				}
-			}
-			orderedInstructions.add(compactString);
-			compactString = "";
-		}
-
-		return orderedInstructions;
 	}
 
 	/**
