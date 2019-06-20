@@ -13,18 +13,22 @@ public class Graph {
 	public Graph() {
 		this.root = null;
 		this.dependents = new ArrayList<Graph>();
+		this.responsables = new ArrayList<Graph>();
 		this.level = 1;
 	}
 
 	public Graph(Node node) {
 		this.root = node;
 		this.dependents = new ArrayList<Graph>();
-		this.level = null;
+		this.responsables = new ArrayList<Graph>();
+		this.level = 0;
 	}
 
 	public Graph(Node node, Integer level) {
 		this.root = node;
 		this.level = level;
+		this.dependents = new ArrayList<Graph>();
+		this.responsables = new ArrayList<Graph>();
 	}
 
 	public Node getRoot() {
@@ -65,15 +69,21 @@ public class Graph {
 
 		String compactString = "";
 
-		for (int i = 0; i < graphLevelOrdered.size(); i++){
-			compactString.concat((i+1) + " " + graphLevelOrdered.get(i).getRoot().toString() + " | ");
-			if (!graphLevelOrdered.get(i).getResponsables().isEmpty()){
-				for (Graph graph : graphLevelOrdered.get(i).getResponsables()){
-					compactString.concat((orderedInstructions.indexOf(graph)+1) + " ");
+		if (graphLevelOrdered != null){
+			for (int i = 0; i < graphLevelOrdered.size(); i++){
+				if (graphLevelOrdered.get(i).getRoot() != null){
+					compactString += i + " " + graphLevelOrdered.get(i).getRoot().toString() + " | ";
+					if (graphLevelOrdered.get(i).getResponsables() != null){
+						if (!graphLevelOrdered.get(i).getResponsables().isEmpty()){
+							for (Graph graph : graphLevelOrdered.get(i).getResponsables()){
+								compactString += (graphLevelOrdered.indexOf(graph)) + " ";
+							}
+						}
+					}
+					orderedInstructions.add(compactString);
+					compactString = "";
 				}
 			}
-			orderedInstructions.add(compactString);
-			compactString = "";
 		}
 
 		return orderedInstructions;
@@ -87,7 +97,10 @@ public class Graph {
 		// Se o grafo não tiver nenhum dependente, apenas insere o novo nó
 		if (this.dependents.isEmpty()) {
 			this.dependents.add(new Graph(newNode, 2));
+			return;
 		}
+
+		boolean hasResponsable = false;
 
 		// Cria o novo grafo
 		Graph newGraph = new Graph(newNode);
@@ -101,6 +114,7 @@ public class Graph {
 			// Se a raiz do novo grafo for dependente do grafo iterado
 			if (newGraph.getRoot().isDependent(graph.getRoot())) {
 				newGraph.setResponsable(graph);
+				hasResponsable = true;
 
 				// Se o novo grafo não tiver responsável, o nível será o do grafo iterado mais um.
 				// Se tiver, o seu nivel é o maior nível entre os responsáveis mais um.
@@ -112,6 +126,10 @@ public class Graph {
 
 				graph.setDependent(newGraph);
 			}
+		}
+
+		if (!hasResponsable){
+			this.dependents.add(new Graph(newNode, 2));
 		}
 	}
 
@@ -146,10 +164,12 @@ public class Graph {
 			graph = queue.dequeue();
 			graphs.add(graph);
 			
-			if (!graph.dependents.isEmpty()) {
-				for (Graph dependent : graph.getDependents()) {
-					if (dependent.getLevel() == graph.getLevel() + 1) {
-						queue.enqueue(dependent);
+			if (graph.dependents != null){
+				if (!graph.dependents.isEmpty()) {
+					for (Graph dependent : graph.getDependents()) {
+						if (dependent.getLevel() == graph.getLevel() + 1) {
+							queue.enqueue(dependent);
+						}
 					}
 				}
 			}

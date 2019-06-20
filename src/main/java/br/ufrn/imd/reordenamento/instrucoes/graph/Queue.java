@@ -1,12 +1,13 @@
 package br.ufrn.imd.reordenamento.instrucoes.graph;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Queue {
 	private List<Graph> graphs;
 
 	public Queue() {
-		super();
+		graphs = new ArrayList<Graph>();
 	}
 	
 	/**
