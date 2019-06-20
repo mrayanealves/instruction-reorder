@@ -51,7 +51,24 @@ public class Node {
 	}
 
 	public boolean isDependent(Node node) {
-		return false;
+		boolean isDependent = false;
+
+		if ((node.getDestionationRecorder().equals(this.getFirstOperationRecorder())) ||
+				(node.getDestionationRecorder().equals(this.getLastOperationRecorder()))){
+			isDependent = true;
+		}
+
+		return isDependent;
+	}
+
+	public boolean isFalseDependent(Node node){
+		boolean isFalseDependent = false;
+
+		if (node.getDestionationRecorder().equals(this.getDestionationRecorder())){
+			isFalseDependent = true;
+		}
+
+		return isFalseDependent;
 	}
 	
 	@Override
