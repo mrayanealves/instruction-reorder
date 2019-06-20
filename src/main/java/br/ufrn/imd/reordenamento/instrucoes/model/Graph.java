@@ -7,6 +7,7 @@ import java.util.List;
 public class Graph {
 	private Node root;
 	private Integer level;
+	private List<Graph> responsable;
 	private List<Graph> dependents;
 	
 	
@@ -43,7 +44,15 @@ public class Graph {
 	public void setLevel(Integer level) {
 		this.level = level;
 	}
-	
+
+	public List<Graph> getResponsable() {
+		return responsable;
+	}
+
+	public void setResponsable(List<Graph> responsable) {
+		this.responsable = responsable;
+	}
+
 	public List<Graph> getDependents() {
 		return dependents;
 	}
@@ -52,33 +61,22 @@ public class Graph {
 		this.dependents = dependents;
 	}
 
-	public void insertNode(Node newNode) {
-		if (this.dependents.isEmpty()) {
-			this.dependents.add(new Graph(newNode, 2));
-		}
-		
-		List<Graph> graphs = this.levelOrder();
-		Iterator<Graph> it = graphs.iterator();
-		
-		boolean hasResponsable = false;
-		Integer level = 0;
-		Graph responsable = new Graph();
-		
-		while (it.hasNext()) {
-			Graph graph = (Graph) it.next();
-			if (newNode.isDependent(graph.root)) {
-				if (hasResponsable) {
-					level = graph.getLevel() + 1;
-					if (graph.getLevel() < responsable.getLevel()) {
-						level = responsable.level + 1;
-						// Parei aqui
-					}
-				}
-			}
-		}
-		
-	}
-	
+//	public void insertNode(Node newNode) {
+//		if (this.dependents.isEmpty()) {
+//			this.dependents.add(new Graph(newNode, 2));
+//		}
+//
+//		List<Graph> graphs = this.levelOrder();
+//		Iterator<Graph> it = graphs.iterator();
+//
+//		while (it.hasNext()) {
+//			Graph graph = (Graph) it.next();
+//			if (newNode.isDependent(graph.root)) {
+//
+//			}
+//		}
+//	}
+
 	public List<Graph> returnOrderedInstructions(Graph graph){
 		return null;
 	}
