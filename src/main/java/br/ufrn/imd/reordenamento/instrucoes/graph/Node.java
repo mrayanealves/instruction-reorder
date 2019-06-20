@@ -72,6 +72,19 @@ public class Node {
 
 		return isFalseDependent;
 	}
+
+	public boolean equals(Node node){
+		boolean equals = false;
+
+		if ((this.getOperation().equals(node.getOperation())) ||
+				(this.getDestionationRecorder().equals(node.getDestionationRecorder())) ||
+				(this.getFirstOperationRecorder().equals(node.getFirstOperationRecorder())) ||
+				(this.getLastOperationRecorder().equals(node.getLastOperationRecorder()))){
+			equals = true;
+		}
+
+		return equals;
+	}
 	
 	@Override
 	public String toString() {

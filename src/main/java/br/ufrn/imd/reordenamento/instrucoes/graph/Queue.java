@@ -15,6 +15,10 @@ public class Queue {
 	 * @param graph Graph a ser adicionado
 	 */
 	public void enqueue(Graph graph) {
+		Integer inQueue = graphs.indexOf(graph);
+		if (inQueue > 0){
+			return;
+		}
 		this.graphs.add(graph);
 	}
 

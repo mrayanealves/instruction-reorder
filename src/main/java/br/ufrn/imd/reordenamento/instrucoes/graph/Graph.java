@@ -1,8 +1,6 @@
 package br.ufrn.imd.reordenamento.instrucoes.graph;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Graph {
 	private Node root;
@@ -156,7 +154,7 @@ public class Graph {
 	private List<Graph> levelOrder(){
 		Queue queue = new Queue();
 		List<Graph> graphs = new ArrayList<Graph>();
-		
+
 		Graph graph = this;
 		queue.enqueue(graph);
 		
@@ -164,17 +162,27 @@ public class Graph {
 			graph = queue.dequeue();
 			graphs.add(graph);
 			
-			if (graph.dependents != null){
-				if (!graph.dependents.isEmpty()) {
-					for (Graph dependent : graph.getDependents()) {
-						if (dependent.getLevel() == graph.getLevel() + 1) {
-							queue.enqueue(dependent);
-						}
+			if ((graph.dependents != null) && (!graph.dependents.isEmpty())){
+				for (Graph dependent : graph.getDependents()) {
+					if (dependent.getLevel() == graph.getLevel() + 1) {
+						queue.enqueue(dependent);
 					}
 				}
 			}
 		}
 
 		return graphs;
+	}
+
+	private boolean equals(Graph graph){
+		boolean equals = false;
+
+		if ((this.root != null) && (graph.root != null)){
+			if (this.root.equals(graph.root)){
+				equals = true;
+			}
+		}
+
+		return equals;
 	}
 }
