@@ -1,4 +1,4 @@
-package br.ufrn.imd.reordenamento.instrucoes.model;
+package br.ufrn.imd.reordenamento.instrucoes.graph;
 
 public class Node {
 	private String operation;
