@@ -16,10 +16,6 @@ public class Queue {
 	public void enqueue(Graph graph) {
 		this.graphs.add(graph);
 	}
-	
-	public void enqueueAll(List<Graph> graphs) {
-		graphs.addAll(graphs);
-	}
 
 	/**
 	 * Remove elementos da fila
