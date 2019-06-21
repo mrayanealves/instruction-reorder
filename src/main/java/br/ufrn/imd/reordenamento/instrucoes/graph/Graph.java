@@ -71,13 +71,17 @@ public class Graph {
 			for (int i = 0; i < graphLevelOrdered.size(); i++){
 				if (graphLevelOrdered.get(i).getRoot() != null){
 					compactString += i + " " + graphLevelOrdered.get(i).getRoot().toString() + " | ";
+					
 					if (graphLevelOrdered.get(i).getResponsables() != null){
 						if (!graphLevelOrdered.get(i).getResponsables().isEmpty()){
-							for (Graph graph : graphLevelOrdered.get(i).getResponsables()){
-								compactString += (graphLevelOrdered.indexOf(graph)) + " ";
+							compactString += findInGraph(graphLevelOrdered, graphLevelOrdered.get(i).getResponsables().get(0)) + " ";
+
+							if (graphLevelOrdered.get(i).getResponsables().size() == 2){
+								compactString += findInGraph(graphLevelOrdered, graphLevelOrdered.get(i).getResponsables().get(1)) + " ";
 							}
 						}
 					}
+					
 					orderedInstructions.add(compactString);
 					compactString = "";
 				}
@@ -108,7 +112,7 @@ public class Graph {
         Iterator<Graph> it = graphs.iterator();
 
         while (it.hasNext()) {
-            Graph graph = it.next();
+            Graph graph = (Graph) it.next();
             // Se a raiz do novo grafo for dependente do grafo iterado
             if (newGraph.getRoot().isDependent(graph.getRoot())) {
                 newGraph.setResponsable(graph);
@@ -123,6 +127,13 @@ public class Graph {
                 }
 
                 graph.setDependent(newGraph);
+            } else {
+            	if (graph.getRoot() != null) {
+            		if (graph.getRoot().isDependent(newGraph.getRoot())) {
+        				newGraph.setDependent(graph);
+        				graph.setResponsable(newGraph);
+        			}
+				}
             }
         }
 
@@ -184,5 +195,18 @@ public class Graph {
 		}
 
 		return equals;
+	}
+	
+	private Integer findInGraph(List<Graph> graphs, Graph graph) {
+		Integer position = -1;
+		
+		for (int i = 0; i < graphs.size(); i++) {
+			if (graph.equals(graphs.get(i))) {
+				position = i;
+				break;
+			}
+		}
+		
+		return position;
 	}
 }

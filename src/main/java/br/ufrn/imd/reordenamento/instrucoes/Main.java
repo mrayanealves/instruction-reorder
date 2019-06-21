@@ -13,10 +13,10 @@ public class Main {
         instructions.add("add s4 t3 t6");
         instructions.add("add s7 s1 s4");
         instructions.add("addi s5 s0 s4");
-        instructions.add("add s3 s1 s2");
-        instructions.add("add s3 s1 s0");
+        instructions.add("add s6 t4 t6");
+        instructions.add("addi s3 s1 s6");
         instructions.add("add s5 t1 t8");
-        instructions.add("add s5 s7 s2");
+        instructions.add("addi s5 s7 s2");
         instructions.add("add s5 s0 s2");
 
         InstructionManager manager = new InstructionManager();
