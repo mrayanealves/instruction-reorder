@@ -1,23 +1,15 @@
 package br.ufrn.imd.reordenamento.instrucoes;
 
 import br.ufrn.imd.reordenamento.instrucoes.model.InstructionManager;
+import br.ufrn.imd.reordenamento.instrucoes.read.ReadTXT;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> instructions = new ArrayList<String>();
-        instructions.add("add s0 t1 t2");
-        instructions.add("add s1 t2 t3");
-        instructions.add("add s4 t3 t6");
-        instructions.add("add s7 s1 s4");
-        instructions.add("addi s5 s0 s4");
-        instructions.add("add s6 t4 t6");
-        instructions.add("addi s3 s1 s6");
-        instructions.add("add s5 t1 t8");
-        instructions.add("addi s5 s7 s2");
-        instructions.add("add s5 s0 s2");
+        ReadTXT readTXT = new ReadTXT();
+
+        List<String> instructions = readTXT.read("src/main/java/br/ufrn/imd/reordenamento/instrucoes/files/instructions.txt");
 
         InstructionManager manager = new InstructionManager();
 
