@@ -1,95 +1,59 @@
 package br.ufrn.imd.reordenamento.instrucoes.graph;
 
+import br.ufrn.imd.reordenamento.instrucoes.model.Instruction;
+
+/**
+ * Classe que representa o nó com a instrução
+ */
+
 public class Node {
-	private String operation;
-	private String destionationRecorder;
-	private String firstOperationRecorder;
-	private String lastOperationRecorder;
-	
+	private Instruction instruction;
+
+	/**
+	 * Construtores
+	 */
 	public Node() {
-		super();
+		this.instruction = new Instruction();
 	}
-	
-	public Node(String operation, String destionationRecorder, String firstOperationRecorder,
-			String lastOperationRecorder) {
-		this.operation = operation;
-		this.destionationRecorder = destionationRecorder;
-		this.firstOperationRecorder = firstOperationRecorder;
-		this.lastOperationRecorder = lastOperationRecorder;
+
+	public Node(Instruction instruction) {
+		this.instruction = instruction;
 	}
-	
-	public String getOperation() {
-		return operation;
+
+	/**
+	 * Getters and Setters
+	 */
+	public Instruction getInstruction() {
+		return instruction;
 	}
-	
-	public void setOperation(String operation) {
-		this.operation = operation;
-	}
-	
-	public String getDestionationRecorder() {
-		return destionationRecorder;
-	}
-	
-	public void setDestionationRecorder(String destionationRecorder) {
-		this.destionationRecorder = destionationRecorder;
-	}
-	
-	public String getFirstOperationRecorder() {
-		return firstOperationRecorder;
-	}
-	
-	public void setFirstOperationRecorder(String firstOperationRecorder) {
-		this.firstOperationRecorder = firstOperationRecorder;
-	}
-	
-	public String getLastOperationRecorder() {
-		return lastOperationRecorder;
-	}
-	
-	public void setLastOperationRecorder(String lastOperationRecorder) {
-		this.lastOperationRecorder = lastOperationRecorder;
+
+	public void setInstruction(Instruction instruction) {
+		this.instruction = instruction;
 	}
 
 	public boolean isDependent(Node node) {
-		boolean isDependent = false;
-
-		if (node != null){
-			if ((node.getDestionationRecorder().equals(this.getFirstOperationRecorder())) ||
-					(node.getDestionationRecorder().equals(this.getLastOperationRecorder()))){
-				isDependent = true;
-			}
+		if (node == null){
+			return false;
 		}
-
-		return isDependent;
+		return this.instruction.isDependent(node.getInstruction());
 	}
 
 	public boolean isFalseDependent(Node node){
-		boolean isFalseDependent = false;
-
-		if (this.getDestionationRecorder().equals(node.getDestionationRecorder())){
-			isFalseDependent = true;
+		if (node == null){
+			return false;
 		}
-
-		return isFalseDependent;
+		return this.instruction.isFalseDependent(node.getInstruction());
 	}
 
 	public boolean equals(Node node){
-		boolean equals = false;
-
-		if ((this.getOperation().equals(node.getOperation())) &&
-				(this.getDestionationRecorder().equals(node.getDestionationRecorder())) &&
-				(this.getFirstOperationRecorder().equals(node.getFirstOperationRecorder())) &&
-				(this.getLastOperationRecorder().equals(node.getLastOperationRecorder()))){
-			equals = true;
+		if (node == null){
+			return false;
 		}
-
-		return equals;
+		return this.instruction.equals(node.getInstruction());
 	}
 	
 	@Override
 	public String toString() {
-		return operation + " " + destionationRecorder
-				+ " " + firstOperationRecorder + " "
-				+ lastOperationRecorder;
+		return this.instruction.toString();
 	}
 }

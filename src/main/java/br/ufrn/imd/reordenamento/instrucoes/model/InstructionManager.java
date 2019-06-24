@@ -43,7 +43,7 @@ public class InstructionManager {
                 graph.insertNode(nodes.get(0));
             } else {
                 if (nodes.get(i).isFalseDependent(nodes.get(i-1))){
-                    nodes.get(i).setDestionationRecorder(newRegisterName());
+                    nodes.get(i).getInstruction().setDestionationRecorder(newRegisterName());
                 }
                 graph.insertNode(nodes.get(i));
             }
@@ -64,10 +64,10 @@ public class InstructionManager {
                 throw new InstructionNotValidException("Instruction not valid");
             }
 
-            newNode.setOperation(splitInstruction[0]);
-            newNode.setDestionationRecorder(splitInstruction[1]);
-            newNode.setFirstOperationRecorder(splitInstruction[2]);
-            newNode.setLastOperationRecorder(splitInstruction[3]);
+            newNode.getInstruction().setOperation(splitInstruction[0]);
+            newNode.getInstruction().setDestionationRecorder(splitInstruction[1]);
+            newNode.getInstruction().setFirstOperationRecorder(splitInstruction[2]);
+            newNode.getInstruction().setLastOperationRecorder(splitInstruction[3]);
 
             newsNodes.add(newNode);
         }

@@ -11,16 +11,9 @@ import java.util.*;
  */
 
 public class Graph {
-	// Nó raíz
 	private Node root;
-
-	// Nível do nó
 	private Integer level;
-
-	// Responsáveis do nó
 	private List<Graph> responsables;
-
-	// Dependentes do nó
 	private List<Graph> dependents;
 
 	/**
@@ -54,11 +47,11 @@ public class Graph {
 	public Node getRoot() {
 		return root;
 	}
-	
+
 	public Integer getLevel() {
 		return level;
 	}
-	
+
 	public void setLevel(Integer level) {
 		this.level = level;
 	}
@@ -77,6 +70,58 @@ public class Graph {
 
 	public void setDependent(Graph dependent){
 		this.dependents.add(dependent);
+	}
+
+	/**
+	 * Insere um novo nó no grafo
+	 * @param newNode Node a ser inserido
+	 */
+	public void insertNode(Node newNode) {
+		// Se o grafo não tiver nenhum dependente, apenas insere o novo nó
+		if (this.dependents.isEmpty()) {
+			this.dependents.add(new Graph(newNode, 2));
+			return;
+		}
+
+		boolean hasResponsable = false;
+
+		// Cria o novo grafo
+		Graph newGraph = new Graph(newNode);
+
+		// Percorre o grafo por nível e itera
+		List<Graph> graphs = this.levelOrder();
+		Iterator<Graph> it = graphs.iterator();
+
+		while (it.hasNext()) {
+			Graph graph = (Graph) it.next();
+
+			// Se a raiz do novo grafo for dependente do grafo iterado
+			if (newGraph.getRoot().isDependent(graph.getRoot())) {
+				newGraph.setResponsable(graph);
+				hasResponsable = true;
+
+				// Se o novo grafo não tiver responsável, o nível será o do grafo iterado mais um.
+				// Se tiver, o seu nivel é o maior nível entre os responsáveis mais um.
+				if (newGraph.getResponsables().isEmpty()){
+					newGraph.setLevel(graph.getLevel() + 1);
+				} else {
+					newGraph.setLevel(higherLevel(newGraph.getResponsables()) + 1);
+				}
+				graph.setDependent(newGraph);
+			}
+
+			// Se o grafo iterado for diferente de nulo e for dependente do novo grafo
+			else if ((graph.getRoot() != null) && (graph.getRoot().isDependent(newGraph.getRoot()))) {
+				newGraph.setDependent(graph);
+				graph.setResponsable(newGraph);
+			}
+		}
+
+		// Se depois de percorrer o grafo completo o novo grafo não encontrar nenhuma dependência para ele, insere ele
+		// no primeiro nível
+		if (!hasResponsable){
+			this.dependents.add(new Graph(newNode, 2));
+		}
 	}
 
 	/**
@@ -127,58 +172,6 @@ public class Graph {
 
 		return orderedInstructions;
 	}
-
-	/**
-	 * Insere um novo nó no grafo
-	 * @param newNode Node a ser inserido
-	 */
-    public void insertNode(Node newNode) {
-    	// Se o grafo não tiver nenhum dependente, apenas insere o novo nó
-        if (this.dependents.isEmpty()) {
-            this.dependents.add(new Graph(newNode, 2));
-            return;
-        }
-
-        boolean hasResponsable = false;
-
-        // Cria o novo grafo
-        Graph newGraph = new Graph(newNode);
-
-        // Percorre o grafo por nível e itera
-        List<Graph> graphs = this.levelOrder();
-        Iterator<Graph> it = graphs.iterator();
-
-        while (it.hasNext()) {
-            Graph graph = (Graph) it.next();
-
-            // Se a raiz do novo grafo for dependente do grafo iterado
-            if (newGraph.getRoot().isDependent(graph.getRoot())) {
-                newGraph.setResponsable(graph);
-                hasResponsable = true;
-
-                // Se o novo grafo não tiver responsável, o nível será o do grafo iterado mais um.
-                // Se tiver, o seu nivel é o maior nível entre os responsáveis mais um.
-                if (newGraph.getResponsables().isEmpty()){
-                    newGraph.setLevel(graph.getLevel() + 1);
-                } else {
-                    newGraph.setLevel(higherLevel(newGraph.getResponsables()) + 1);
-                }
-                graph.setDependent(newGraph);
-            }
-
-            // Se o grafo iterado for diferente de nulo e for dependente do novo grafo
-            else if ((graph.getRoot() != null) && (graph.getRoot().isDependent(newGraph.getRoot()))) {
-				newGraph.setDependent(graph);
-				graph.setResponsable(newGraph);
-            }
-        }
-
-        // Se depois de percorrer o grafo completo o novo grafo não encontrar nenhuma dependência para ele, insere ele
-		// no primeiro nível
-        if (!hasResponsable){
-            this.dependents.add(new Graph(newNode, 2));
-        }
-    }
 
 	/**
 	 * Calcula qual o maior nível entre os grafos
@@ -265,14 +258,14 @@ public class Graph {
 	 */
 	private Integer findInGraph(List<Graph> graphs, Graph graph) {
 		Integer position = -1;
-		
+
 		for (int i = 0; i < graphs.size(); i++) {
 			if (graph.equals(graphs.get(i))) {
 				position = i;
 				break;
 			}
 		}
-		
+
 		return position;
 	}
 }

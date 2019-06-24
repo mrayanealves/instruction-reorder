@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9917625c-ea53-45b6-a732-d53c7e887177" name="Default Changelist" comment="main">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/files/instructions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/read/ReadTXT.java" afterDir="false" />
+    <list default="true" id="9917625c-ea53-45b6-a732-d53c7e887177" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/Instruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/InstructionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/InstructionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/ufrn/imd/reordenamento/instrucoes/graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ufrn/imd/reordenamento/instrucoes/graph/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/ufrn/imd/reordenamento/instrucoes/graph/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ufrn/imd/reordenamento/instrucoes/graph/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/ufrn/imd/reordenamento/instrucoes/model/InstructionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ufrn/imd/reordenamento/instrucoes/model/InstructionManager.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,23 +24,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="19" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/files/instructions.txt">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+            <state relative-caret-position="630">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+              <folding>
+                <element signature="docComment;class#Graph#0" />
+                <element signature="docComment;method#Graph#0;class#Graph#0" />
+                <element signature="method#Graph#0;class#Graph#0" />
+                <element signature="method#Graph#1;class#Graph#0" />
+                <element signature="method#Graph#2;class#Graph#0" />
+                <element signature="e#1153#1185#0" />
+                <element signature="e#1384#1385#0" expanded="true" />
+                <element signature="e#1415#1416#0" expanded="true" />
+                <element signature="docComment;method#insertNode#0;class#Graph#0" />
+                <element signature="method#insertNode#0;class#Graph#0" />
+                <element signature="docComment;method#returnGraphDependences#0;class#Graph#0" />
+                <element signature="method#returnGraphDependences#0;class#Graph#0" />
+                <element signature="docComment;method#higherLevel#0;class#Graph#0" />
+                <element signature="method#higherLevel#0;class#Graph#0" />
+                <element signature="docComment;method#levelOrder#0;class#Graph#0" />
+                <element signature="method#levelOrder#0;class#Graph#0" />
+                <element signature="docComment;method#equals#0;class#Graph#0" />
+                <element signature="method#equals#0;class#Graph#0" />
+                <element signature="docComment;method#findInGraph#0;class#Graph#0" />
+                <element signature="method#findInGraph#0;class#Graph#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,27 +79,14 @@
         <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/Graph.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/Node.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/exception/InstructionNotValidException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Queue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/read/ReadTXT.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/files/instructions.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/Instruction.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/InstructionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Node.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Graph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Queue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/read/ReadTXT.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/files/instructions.txt" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/instrucoes.iml" />
-        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
-        <option value="$PROJECT_DIR$/.idea/encodings.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-        <option value="$PROJECT_DIR$/.idea/uiDesigner.xml" />
       </list>
     </option>
   </component>
@@ -98,6 +101,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,17 +142,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="instrucoes" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="graph" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -204,7 +208,8 @@
       <workItem from="1560988582560" duration="305000" />
       <workItem from="1561042285707" duration="23810000" />
       <workItem from="1561069549103" duration="1257000" />
-      <workItem from="1561383871842" duration="1469000" />
+      <workItem from="1561383871842" duration="6001000" />
+      <workItem from="1561390350698" duration="882000" />
     </task>
     <task id="LOCAL-00001" summary="Sem paciencia pra pensar">
       <created>1560988905300</created>
@@ -276,17 +281,24 @@
       <option name="project" value="LOCAL" />
       <updated>1561070621829</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Comentando métodos da classe Graph">
+      <created>1561388154854</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1561388154857</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26841000" />
+    <option name="totallyTimeSpent" value="32255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="-1" width="1326" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171875" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26640624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -329,7 +341,8 @@
     <MESSAGE value="Finalizando o trabalho (Versão 1)" />
     <MESSAGE value="Modificações poucas" />
     <MESSAGE value="main" />
-    <option name="LAST_COMMIT_MESSAGE" value="main" />
+    <MESSAGE value="Comentando métodos da classe Graph" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comentando métodos da classe Graph" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -370,54 +383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="167" column="47" selection-start-line="167" selection-start-column="47" selection-end-line="167" selection-end-column="47" />
-          <folding>
-            <element signature="method#Graph#0;class#Graph#0" />
-            <element signature="method#Graph#1;class#Graph#0" />
-            <element signature="method#Graph#2;class#Graph#0" />
-            <element signature="docComment;method#returnGraphDependences#0;class#Graph#0" />
-            <element signature="method#returnGraphDependences#0;class#Graph#0" />
-            <element signature="docComment;method#insertNode#0;class#Graph#0" />
-            <element signature="method#insertNode#0;class#Graph#0" />
-            <element signature="docComment;method#higherLevel#0;class#Graph#0" />
-            <element signature="method#higherLevel#0;class#Graph#0" />
-            <element signature="docComment;method#levelOrder#0;class#Graph#0" />
-            <element signature="method#equals#0;class#Graph#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/InstructionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#newRegisterName#0;class#InstructionManager#0" />
-            <element signature="method#makeNodes#0;class#InstructionManager#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
-          <folding>
-            <element signature="method#Node#1;class#Node#0" />
-            <element signature="method#setFirstOperationRecorder#0;class#Node#0" />
-            <element signature="method#setLastOperationRecorder#0;class#Node#0" />
-            <element signature="method#isDependent#0;class#Node#0" />
-            <element signature="method#isFalseDependent#0;class#Node#0" />
-            <element signature="method#equals#0;class#Node#0" />
-            <element signature="method#toString#0;class#Node#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/read/ReadTXT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
@@ -429,20 +394,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/files/instructions.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/Instruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+          <folding>
+            <element signature="docComment;method#Instruction#0;class#Instruction#0" />
+            <element signature="method#Instruction#0;class#Instruction#0" />
+            <element signature="docComment;method#getOperation#0;class#Instruction#0" />
+            <element signature="method#setDestionationRecorder#0;class#Instruction#0" />
+            <element signature="method#setFirstOperationRecorder#0;class#Instruction#0" />
+            <element signature="method#setLastOperationRecorder#0;class#Instruction#0" />
+            <element signature="docComment;method#isDependent#0;class#Instruction#0" />
+            <element signature="docComment;method#isFalseDependent#0;class#Instruction#0" />
+            <element signature="method#isFalseDependent#0;class#Instruction#0" />
+            <element signature="docComment;method#equals#0;class#Instruction#0" />
+            <element signature="method#equals#0;class#Instruction#0" />
+            <element signature="docComment;method#toString#0;class#Instruction#0" />
+            <element signature="method#toString#0;class#Instruction#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="19" selection-end-column="41" />
+        <state relative-caret-position="315">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/files/instructions.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/model/InstructionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        <state relative-caret-position="330">
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#reorderInstructions#0;class#InstructionManager#0" />
+            <element signature="method#newRegisterName#0;class#InstructionManager#0" />
+            <element signature="method#makeGraph#0;class#InstructionManager#0" />
+            <element signature="method#makeNodes#0;class#InstructionManager#0" />
+            <element signature="e#1647#1653#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+          <folding>
+            <element signature="docComment;class#Node#0" />
+            <element signature="docComment;method#Node#0;class#Node#0" />
+            <element signature="docComment;method#getInstruction#0;class#Node#0" />
+            <element signature="method#isDependent#0;class#Node#0" />
+            <element signature="method#isFalseDependent#0;class#Node#0" />
+            <element signature="method#equals#0;class#Node#0" />
+            <element signature="e#976#1018#1" />
+            <element signature="e#1123#1124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufrn/imd/reordenamento/instrucoes/graph/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="docComment;class#Graph#0" />
+            <element signature="docComment;method#Graph#0;class#Graph#0" />
+            <element signature="method#Graph#0;class#Graph#0" />
+            <element signature="method#Graph#1;class#Graph#0" />
+            <element signature="method#Graph#2;class#Graph#0" />
+            <element signature="e#1153#1185#0" />
+            <element signature="e#1384#1385#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+            <element signature="docComment;method#insertNode#0;class#Graph#0" />
+            <element signature="method#insertNode#0;class#Graph#0" />
+            <element signature="docComment;method#returnGraphDependences#0;class#Graph#0" />
+            <element signature="method#returnGraphDependences#0;class#Graph#0" />
+            <element signature="docComment;method#higherLevel#0;class#Graph#0" />
+            <element signature="method#higherLevel#0;class#Graph#0" />
+            <element signature="docComment;method#levelOrder#0;class#Graph#0" />
+            <element signature="method#levelOrder#0;class#Graph#0" />
+            <element signature="docComment;method#equals#0;class#Graph#0" />
+            <element signature="method#equals#0;class#Graph#0" />
+            <element signature="docComment;method#findInGraph#0;class#Graph#0" />
+            <element signature="method#findInGraph#0;class#Graph#0" />
+          </folding>
         </state>
       </provider>
     </entry>
