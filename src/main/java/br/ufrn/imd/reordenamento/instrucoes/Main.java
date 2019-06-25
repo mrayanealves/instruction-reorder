@@ -14,7 +14,8 @@ public class Main {
         InstructionManager manager = new InstructionManager();
 
         List<String> reorderInstructions = manager.reorderInstructions(instructions);
-
+        
+        System.out.println("  INSTRUCTION  |  DEPENDS ON\n");
         for (String instruction : reorderInstructions){
             System.out.println(instruction);
         }
