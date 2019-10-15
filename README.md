@@ -17,7 +17,7 @@ A proposta desse projeto é **implementar uma ferramenta que recebe como entrada
 
 Assim, o projeto recebe um conjunto de instruções em estrutura de registradores. Cada instrução segue a seguinte forma: 
 
-> add s0 t1 t2
+> `add s0 t1 t2`
 
 Nessa instrução, a **primeira string** indica **qual a operação aquela instrução trabalha** (nesse caso, por exemplo, essa instrução fará uma soma). A **segunda string** indica **qual o registrador de destino dessa operação**, ou seja onde o valor da soma será guardado, nesse caso. A **terceira string** indica **qual o registrador contém o primeiro valor a ser operado**, seguido da **quarta string** que **indica qual é o segundo**.
 
