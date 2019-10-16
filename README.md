@@ -50,7 +50,7 @@ Vale salientar que implementamos uma solução para evitar falsas dependências 
 
 Para executar o projeto, primeiramente clone esse repositório em sua máquina.
 
-Posteriormente, abra o repositório no Eclipse, procure a classe *Main* que está no pacote `br.ufrn.imd.instruction.reorder`, clica no botão direito em cima da classe e selecione `Run as > Java Application`. 
+Posteriormente, abra o repositório no Eclipse, procure a classe *Main* que está no pacote `br.ufrn.imd.instruction.reorder`, clique no botão direito em cima da classe e selecione `Run as > Java Application`. 
 
 Vale lembrar que as instruções de entrada são carregadas do arquivo *instruction.txt* localizado em `br.ufrn.imd.instruction.reorder.files`. Caso deseje mudar as entradas, só precisa alterar nesse arquivo.
 
